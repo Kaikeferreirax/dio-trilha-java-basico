@@ -3,13 +3,13 @@ package one.digitalinnovation;
 public class Main {
     public static void main(String[] args) {
 
-            Fila minhafila = new Fila();
+            Fila<String> minhafila = new Fila();
 
-            minhafila.enqueue(new No("primeiro"));
-            minhafila.enqueue(new No("segundo"));
-            minhafila.enqueue(new No("terceiro"));
-            minhafila.enqueue(new No("quarto"));
-            minhafila.enqueue(new No("quinto"));
+            minhafila.enqueue("primeiro");
+            minhafila.enqueue("segundo");
+            minhafila.enqueue("terceiro");
+            minhafila.enqueue("quarto");
+            minhafila.enqueue("Quinto");
 
         System.out.println(minhafila);
         System.out.println(minhafila.dequeue());
