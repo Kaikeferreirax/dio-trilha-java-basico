@@ -54,5 +54,27 @@ public class Fila {
         return refNoEntradaFila == null ? true : false;
     }
 
+    public String toString(){
+        String stringRetorno = "";
+        No noAuxiliar = refNoEntradaFila;
+
+        if (refNoEntradaFila != null){
+            while (true) {
+                stringRetorno += "[No {objeto = " + noAuxiliar.getObject() + "}] ---->";
+                if(noAuxiliar.getRefNo() != null){
+                    noAuxiliar = noAuxiliar.getRefNo();
+
+                }else {
+                    break;
+                }
+
+            }
+        }else {
+            stringRetorno = "null";
+        }
+
+
+        return stringRetorno;
+    }
 
 }
