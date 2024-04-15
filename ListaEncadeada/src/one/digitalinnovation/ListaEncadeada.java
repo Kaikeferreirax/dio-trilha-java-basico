@@ -10,6 +10,8 @@ public class ListaEncadeada<T> {
 
     }
 
+
+
     private No<T> getNo(int index){
 
         validaIndice(index);
@@ -42,6 +44,9 @@ public class ListaEncadeada<T> {
 
     }
 
+    public T get(int index){
+        return getNo(index).getConteudo();
+    }
 
     public boolean isEmpty() {
     return referenciaEntrada == null ? true : false;
