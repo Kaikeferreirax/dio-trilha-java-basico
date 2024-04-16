@@ -26,6 +26,9 @@ public class ListaEncadeada<T> {
         return noRetorno;
     }
 
+
+
+
     public T remove(int index){
         No<T> noPivor = this.getNo(index);
         if(index == 0){
@@ -96,5 +99,15 @@ public class ListaEncadeada<T> {
         return tamanhoLista;
     }
 
-
+    @Override
+    public String toString() {
+        String strRetorno = "";
+        No <T> noAuxiliar = referenciaEntrada;
+        for(int i = 0; i < this.size(); i++){
+            strRetorno += " [No{ conteudo  =" + noAuxiliar.getConteudo() + "}] ---->";
+            noAuxiliar = noAuxiliar.getProximoNo();
+        }
+        strRetorno += "null";
+        return strRetorno;
+    }
 }
