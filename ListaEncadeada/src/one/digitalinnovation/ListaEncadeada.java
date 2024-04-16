@@ -10,6 +10,23 @@ public class ListaEncadeada<T> {
 
     }
 
+    public void add(T conteudo){
+        No<T>  novoNo =  new No(conteudo);
+        if(this.isEmpty()){
+            referenciaEntrada = novoNo;
+            return;
+        }
+
+        No<T> noAuxiliar = referenciaEntrada;
+        for(int i = 0; i < this.size() - 1; i++){
+
+            noAuxiliar = noAuxiliar.getProximoNo();
+
+        }
+        noAuxiliar.setProximoNo(novoNo);
+
+    }
+
 
 
     private No<T> getNo(int index){
@@ -18,7 +35,7 @@ public class ListaEncadeada<T> {
         No<T> noAuxiliar = referenciaEntrada;
         No <T> noRetorno = null;
 
-        for(int i = 0; i < this.size() -1; i++){
+        for(int i = 0; i <= index; i++){
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
@@ -42,23 +59,12 @@ public class ListaEncadeada<T> {
         return noPivor.getConteudo();
     }
 
+    public No<T> getReferenciaEntrada() {
+        return referenciaEntrada;
+    }
 
-    public void add(T conteudo){
-        No <T>  novoNo =  new No<>(conteudo);
-        if(this.isEmpty()){
-             referenciaEntrada = novoNo;
-             return;
-        }
-
-        No noAuxiliar = referenciaEntrada;
-        for(int i = 0; i < this.size(); i++){
-
-            noAuxiliar = noAuxiliar.getProximoNo();
-
-        }
-
-        noAuxiliar.setProximoNo(novoNo);
-
+    public void setReferenciaEntrada(No<T> referenciaEntrada) {
+        this.referenciaEntrada = referenciaEntrada;
     }
 
     public T get(int index){
