@@ -32,7 +32,20 @@ public class ListaCircular<T> {
         return this.getNo(index).getConteudo();
     }
 
+    public void add(T elemento){
+        No<T> novoNo = new No<>(elemento);
 
+        if(this.isEmpty()) {
+            this.inicio = novoNo;
+            this.fim = this.inicio;
+            this.inicio.setProximoNo(this.fim);
+        } else {
+            novoNo.setProximoNo(this.fim);
+            this.inicio.setProximoNo(novoNo);
+            this.fim =  novoNo;
+        }
+        tamanhoLista++;
+    }
 
 
     public void remove(int index){
