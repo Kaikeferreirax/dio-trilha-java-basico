@@ -85,6 +85,20 @@ public class ListaCircular<T> {
     }
 
 
+    @Override
+    public String toString() {
+        String strRetorno = "";
+
+        No<T> noAuxiliar = this.fim;
+
+        for(int i = 0; i < this.size(); i++){
+            strRetorno += "[No {conteudo =  "+ noAuxiliar.getConteudo() + "}] --->";
+            noAuxiliar = noAuxiliar.getProximoNo();
+
+        }
+        strRetorno += this.size() != 0 ? "Retorna ao início" : "[]";
 
 
+      return strRetorno;
+    }
 }
