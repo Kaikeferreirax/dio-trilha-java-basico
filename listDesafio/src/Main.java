@@ -21,7 +21,7 @@ public class Main {
         }
         double media = soma / listMes.size();
         for(int i = 0; i < listMes.size(); i++){
-            if (listMes.get(i).getTemperatura() < media){
+            if (listMes.get(i).getTemperatura() > media){
 
                 System.out.println((listMes.indexOf(listMes.get(i)) + 1)+" - " + listMes.get(i).getNomeMes());
             }
