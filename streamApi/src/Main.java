@@ -12,17 +12,24 @@ public class Main {
                 Arrays.asList(0,1,2,3,4,5,6,7,8,9)
         );
 
-        System.out.println(inteiros
+        /*   System.out.println(inteiros
                 .stream()
                 .filter(inteiro -> inteiro % 2 ==0 && inteiro >2 )
                 .collect(Collectors
                 .toList()));
-
-        List<Integer> collectList = inteiros.stream()
+        */
+        //Coletando pares e inserindo em uma lista
+        List<Integer> collectList = inteiros
+                .stream()
                 .filter(i -> i % 2 == 0 && i > 2)
                 .collect(Collectors
-                        .toList());
+                .toList());
         System.out.println(collectList);
+
+        //eliminando numeros impares da lista
+        inteiros.removeIf(i -> i % 2 != 0);
+        System.out.println(inteiros);
+
 
 
     }
