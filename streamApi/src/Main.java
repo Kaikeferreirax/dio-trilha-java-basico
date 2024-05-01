@@ -30,7 +30,16 @@ public class Main {
         inteiros.removeIf(i -> i % 2 != 0);
         System.out.println(inteiros);
 
+        List<String> testee = new ArrayList<>(
+                Arrays.asList("6", "10", "14","21","24")
+        );
 
+         List<Integer> testes = testee
+                 .stream()
+                 .map(Integer::parseInt)
+                 .collect(Collectors
+                 .toList());
+        System.out.println(testes);
 
     }
 }
